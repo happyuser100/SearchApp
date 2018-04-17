@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Bookmarks</h2>
+
+@{
+    var reps = (List<string>)ViewData["Reps"];
+}
+
+@if (reps != null && reps.Count > 0)
+{    
+   foreach (var rep in reps)
+   {
+        <div>Repository: @rep</div>
+        <br />
+   }
+}
+else
+{
+    <div>No bookmarks found</div>
+}
+
+<div style="padding-top:5px">
+    @Html.ActionLink("Back to repositories", "Index", "Search")
+</div>
+   
